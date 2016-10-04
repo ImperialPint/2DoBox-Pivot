@@ -153,30 +153,30 @@ button:focus {
 }
 
 .remove-button{
-  background: url(icons/delete.svg) no-repeat;
+  background: url(../icons/delete.svg) no-repeat;
   border: none;
   margin-left: auto;
 }
 
 .remove-button:hover {
-  background: url(icons/delete-hover.svg) no-repeat;
+  background: url(../icons/delete-hover.svg) no-repeat;
 }
 
 .upvote{
-  background: url(icons/upvote.svg) no-repeat;
+  background: url(../icons/upvote.svg) no-repeat;
   border: none;
 }
 
 .upvote:hover {
-  background: url(icons/upvote-hover.svg) no-repeat;
+  background: url(../icons/upvote-hover.svg) no-repeat;
 }
 
 .downvote{
-  background: url(icons/downvote.svg) no-repeat;
+  background: url(../icons/downvote.svg) no-repeat;
   border: none;
 }
 .downvote:hover {
-  background: url(icons/downvote-hover.svg) no-repeat;
+  background: url(../icons/downvote-hover.svg) no-repeat;
 }
 
 @-ms-viewport{
