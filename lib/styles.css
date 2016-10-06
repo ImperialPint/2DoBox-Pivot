@@ -111,11 +111,11 @@ li {
   border-bottom: 1px solid #D1D3D4;
 }
 
-.title-style, .body-style, .quality-style {
+.title-style, .body-style, .importanceUp-style {
   display: flex;
 }
 
-.quality-style {
+.importanceUp-style {
   align-items: center;
   padding-bottom: 15px;
 }
@@ -132,13 +132,13 @@ li {
   line-height: 1.2;
 }
 
-.quality {
+.importanceUp {
   font-size: .9em;
   padding-left: 8px;
   font-family: 'Roboto Slab', serif;
 }
 
-.quality-value {
+.importanceUp-value {
   padding-left: 3px;
 }
 
