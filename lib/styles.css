@@ -45,7 +45,7 @@ li {
   width: 60vw;
 }
 
-.title, .body, .save-button {
+.title, .body, .save-button, .complete-btn {
   width: 100%;
   margin-bottom: 10px;
   padding-left: 8px;
@@ -56,14 +56,17 @@ li {
   border: 2px solid lightgrey;
 }
 
-.save-button {
+.save-button, .complete-btn {
   background-color: #00a79d;
   color: #ffffff;
   border: none;
   height: 30px;
   font-size: 18px;
-  margin-bottom: 30px;
   text-align: center;
+}
+
+.complete-btn {
+  margin-bottom: 30px;
 }
 
 .save-button:hover {
