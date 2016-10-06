@@ -179,6 +179,10 @@ button:focus {
   background: url(../icons/downvote-hover.svg) no-repeat;
 }
 
+.complete {
+  text-decoration: line-through;
+}
+
 @-ms-viewport{
  width: device-width;
 }
