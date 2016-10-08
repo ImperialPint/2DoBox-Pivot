@@ -7,17 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.5.js"></script>
-    <script>
-      function countChar(val) {
-        var len = val.value.length;
-        if (len >= 500) {
-          val.value = val.value.substring(0, 120);
-        } else {
-          $('#charNum').text(120 - len);
-        }
-      };
-    </script>
     <title> ToDoBox | Be Productive</title>
   </head>
   <body>
@@ -25,9 +14,9 @@
     <section class="header-container">
       <h1>2Do<span>Box</span></h1>
       <section class="input-container">
-        <input type="text" class="title" placeholder="Title" maxlength="120" onkeyup="countChar(this)">
+        <input type="text" class="title" placeholder="Title" maxlength="120">
         <div id="charNum"></div>
-        <input type="text" class="body" placeholder="Task" maxlength="120" onkeyup="countChar(this)">
+        <input type="text" class="body" placeholder="Task" maxlength="120">
         <div id="charNum"></div>
         <button type="button" class="save-button">save</button>
         <button type="button" class="show-complete-button"> show completed todos</button>
