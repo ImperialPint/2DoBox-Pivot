@@ -5,6 +5,17 @@ html {
   box-sizing: inherit;
 }
 
+$headerBackground: #e5f3f2;
+$h1Primary:#00a79d;
+$h1Secondary:#6d6e71;
+$buttonBackground: #00a79d;
+$buttonText: #ffffff;
+$inputBorder: lightgrey;
+$buttongHoverBackground: #045e55;
+$toDoBottomBorder: #D1D3D4;
+$toDoTextColor: #6d6e71;
+$bodyTextColor: #939598;
+
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -15,11 +26,11 @@ h1, h3 {
 }
 
 h1 {
-  color: #00a79d;
+  color: $h1Primary;
 }
 
 h1 span {
-  color: #6d6e71;
+  color: $h1Secondary;
 }
 
 li {
@@ -27,7 +38,7 @@ li {
 }
 
 .header-container {
-  background-color: #e5f3f2;
+  background-color: $headerBackground;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,16 +64,15 @@ li {
 
 .title, .body {
   font-size: 20px;
-  border: 2px solid lightgrey;
+  border: 2px solid $inputBorder;
 }
 
 .button {
-  background-color: #00a79d;
-  color: #ffffff;
+  background-color: $buttonBackground;
+  color: $buttonText;
   border: none;
   height: 30px;
   font-size: 18px;
-  /*margin-bottom: 30px;*/
   text-align: center;
 }
 
@@ -71,7 +81,7 @@ li {
 }
 
 .button:hover {
-  background-color: #045e55;
+  background-color: $buttongHoverBackground;
   cursor: pointer;
 }
 
@@ -85,7 +95,7 @@ li {
 
 .search {
   font-size: 20px;
-  border: 2px solid lightgrey;
+  border: 2px solid $inputBorder;
   margin-bottom: 25px;
   padding-left: 8px;
   width: 60vw;
@@ -97,14 +107,14 @@ li {
 }
 
 .new-body-input {
-  color: #939598;
+  color: $bodyTextColor;
 }
 
 .list-container{
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: #6d6e71;
+  color: $toDoTextColor;
 }
 
 .list-item {
@@ -112,7 +122,7 @@ li {
   flex-direction: column;
   width: 60vw;
   margin-bottom: 15px;
-  border-bottom: 1px solid #D1D3D4;
+  border-bottom: 1px solid $toDoBottomBorder;
 }
 
 .title-style, .body-style, .importanceUp-style {
