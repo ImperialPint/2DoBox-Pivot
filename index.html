@@ -14,11 +14,18 @@
     <section class="header-container">
       <h1>2Do<span>Box</span></h1>
       <section class="input-container">
-        <input type="text" class="title" placeholder="Title">
-        <input type="text" class="body" placeholder="Task">
+        <input type="text" class="title" placeholder="Title" maxlength="120">
+        <div id="charNum"></div>
+        <input type="text" class="body" placeholder="Task" maxlength="120">
+        <div id="charNum"></div>
         <button type="button" class="save-button">save</button>
         <button type="button" class="show-complete-button"> show completed todos</button>
         <button type="button" class="hide-complete-button"> hide completed todos</button>
+        <button type="button" class="critical-button">Critical</button>
+        <button type="button" class="high-button">High</button>
+        <button type="button" class="normal-button">Normal</button>
+        <button type="button" class="low-button">Low</button>
+        <button type="button" class="none-button">None</button>
         <p class="message-to-user"></p>
       </section>
     </section>
@@ -28,6 +35,7 @@
     </section>
 
     <section class="list-container"></section>
+    <button type="button" class="button show-more">show more</button>
 
     <script type="text/javascript" src="main.bundle.js">
     </script>
