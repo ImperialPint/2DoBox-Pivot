@@ -67,7 +67,7 @@ li {
   border: 2px solid $inputBorder;
 }
 
-.button {
+.button, .importance-button, .completed-button {
   background-color: $buttonBackground;
   color: $buttonText;
   border: none;
@@ -76,8 +76,8 @@ li {
   text-align: center;
 }
 
-.show-complete-button{
-  margin-bottom: 30px;
+.importance-button, .completed-button {
+  margin: 10px;
 }
 
 .button:hover {
@@ -85,18 +85,41 @@ li {
   cursor: pointer;
 }
 
+.importance-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px 0;
+  width: 100%;
+}
+
 .search-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.list-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: $toDoTextColor;
+}
+
+.completed-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
   width: 100%;
 }
 
 .search {
   font-size: 20px;
   border: 2px solid $inputBorder;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
   padding-left: 8px;
   width: 60vw;
 }
@@ -110,12 +133,7 @@ li {
   color: $bodyTextColor;
 }
 
-.list-container{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: $toDoTextColor;
-}
+
 
 .list-item {
   display: flex;
@@ -129,10 +147,10 @@ li {
   display: flex;
 }
 
-.importanceUp-style {
-  align-items: center;
-  padding-bottom: 15px;
-}
+// .importanceUp-style {
+//   align-items: center;
+//   padding-bottom: 15px;
+// }
 
 .title-style {
   font-size: 1.3em;
