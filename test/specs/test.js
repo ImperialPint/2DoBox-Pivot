@@ -30,19 +30,72 @@ describe('welcome page', function(){
     assert.equal(toDoBodys, 'great body');
   });
 
-  it('should be able to delete a todo from the page', function(){
+  it('should be able to upvote a todo on the page', function(){
     browser.url('/');
 
-    var toDoTitle = browser.element('.title');
-    var toDoBody = browser.element('.body');
+    browser.click('.upvote');
 
-    toDoTitle.setValue('great title');
-    toDoBody.setValue('great body');
-    browser.click('.save-button');
-    var allToDos = browser.elements('.list-item').getText();
-
-    browser.click('.remove-button');
-    assert.equal(allToDos.length, 2);
-
+    var importance = browser.getText('.importance');
+    assert.equal(importance, 'importance: High');
   });
+
+  it('should remain as critical if you click upvote while importance is critical', function(){
+    browser.url('/');
+
+    browser.click('.upvote');
+    browser.click('.upvote');
+    browser.click('.upvote');
+
+    var importance = browser.getText('.importance');
+    assert.equal(importance, 'importance: Critical');
+  });
+
+  it('should be able to downvote a todo on the page', function(){
+    browser.url('/');
+
+    browser.click('.downvote');
+
+    var importance = browser.getText('.importance');
+    assert.equal(importance, 'importance: High');
+  });
+
+  it('should remain as None if you click downvote while importance is None', function(){
+    browser.url('/');
+
+    browser.click('.downvote');
+    browser.click('.downvote');
+    browser.click('.downvote');
+    browser.click('.downvote');
+    browser.click('.downvote');
+    browser.click('.downvote');
+
+    var importance = browser.getText('.importance');
+    assert.equal(importance, 'importance: None');
+  });
+
+  it('should be able to change the class of a todo after Completed is click', function(){
+    browser.url('/');
+
+    browser.click('.complete-button');
+
+    // var todo = browser.elements('.complete');
+
+    assert.equal(browser.isExisting('.complete'), true);
+  });
+
+  // it('should be able to delete a todo from the page', function(){
+  //   browser.url('/');
+  //
+  //   var toDoTitle = browser.element('.title');
+  //   var toDoBody = browser.element('.body');
+  //
+  //   toDoTitle.setValue('great title');
+  //   toDoBody.setValue('great body');
+  //   browser.click('.save-button');
+  //   var allToDos = browser.elements('.list-item').getText();
+  //
+  //   browser.click('.remove-button');
+  //   assert.equal(allToDos.length, 2);
+  // });
+
 });
