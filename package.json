@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sel": "java -jar selenium-server-standalone-2.53.0.jar",
+    "feature": "wdio wdio.conf.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,9 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "svg-url-loader": "^1.1.0",
+    "wdio-dot-reporter": "0.0.6",
+    "wdio-mocha-framework": "^0.4.3",
+    "webdriverio": "^4.2.16",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
   },
