@@ -4,7 +4,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 $headerBackground: #e5f3f2;
 $h1Primary:#00a79d;
 $h1Secondary:#6d6e71;
@@ -15,28 +14,21 @@ $buttongHoverBackground: #045e55;
 $toDoBottomBorder: #D1D3D4;
 $toDoTextColor: #6d6e71;
 $bodyTextColor: #939598;
-
-
 body{
   font-family: 'Open Sans', sans-serif;
 }
-
 h1, h3 {
   font-family: 'Roboto Slab', serif;
 }
-
 h1 {
   color: $h1Primary;
 }
-
 h1 span {
   color: $h1Secondary;
 }
-
 li {
   list-style-type: none;
 }
-
 .header-container {
   background-color: $headerBackground;
   display: flex;
@@ -48,25 +40,21 @@ li {
   padding-top: 20px;
   width: 100%;
 }
-
 .input-container {
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 20px;
   width: 60vw;
 }
-
 .title, .body, .button {
   width: 100%;
   margin-bottom: 10px;
   padding-left: 8px;
 }
-
 .title, .body {
   font-size: 20px;
   border: 2px solid $inputBorder;
 }
-
 .button, .importance-button, .completed-button {
   background-color: $buttonBackground;
   color: $buttonText;
@@ -76,16 +64,13 @@ li {
   text-align: center;
   border-radius: 25px;
 }
-
 .importance-button, .completed-button {
   margin: 10px;
 }
-
 .button:hover {
   background-color: $buttongHoverBackground;
   cursor: pointer;
 }
-
 .importance-container{
   display: flex;
   justify-content: center;
@@ -93,7 +78,6 @@ li {
   margin-top: 15px 0;
   width: 100%;
 }
-
 .search-container {
   display: flex;
   justify-content: center;
@@ -101,14 +85,12 @@ li {
   margin: 20px 0;
   width: 100%;
 }
-
 .list-container{
   display: flex;
   align-items: center;
   flex-direction: column;
   color: $toDoTextColor;
 }
-
 .completed-container{
   display: flex;
   justify-content: center;
@@ -116,23 +98,23 @@ li {
   margin-bottom: 20px;
   width: 100%;
 }
-
 .search {
   font-size: 20px;
   border: 2px solid $inputBorder;
   padding-left: 8px;
   width: 60vw;
 }
-
 .message-to-user {
   font-size: 15px;
   text-align: center;
 }
-
 .new-body-input {
   color: $bodyTextColor;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b7d77e0e2464797e9390660558cbefbde6d8dc1
 .list-item {
   display: flex;
   flex-direction: column;
@@ -140,43 +122,39 @@ li {
   margin-bottom: 15px;
   border-bottom: 1px solid $toDoBottomBorder;
 }
-
 .title-style, .body-style, .importanceUp-style {
   display: flex;
 }
-
 // .importanceUp-style {
 //   align-items: center;
 //   padding-bottom: 15px;
 // }
-
 .title-style {
   font-size: 1.3em;
   margin-bottom: 15px;
   font-family: 'Roboto Slab', serif;
 }
-
 .body-style{
   margin-bottom: 15px;
   line-height: 1.2;
 }
-
 .importanceUp {
   font-size: .9em;
   padding-left: 8px;
   font-family: 'Roboto Slab', serif;
 }
-
 .importanceUp-value {
   padding-left: 3px;
 }
-
 .btn {
   width: 25px;
   height: 25px;
   padding: 0 14px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b7d77e0e2464797e9390660558cbefbde6d8dc1
 .show-more{
   display: flex;
   width: 125px;
@@ -187,26 +165,21 @@ li {
 button:focus {
   outline:none;
 }
-
 .remove-button{
   background: url(../icons/delete.svg) no-repeat;
   border: none;
   margin-left: auto;
 }
-
 .remove-button:hover {
   background: url(../icons/delete-hover.svg) no-repeat;
 }
-
 .upvote{
   background: url(../icons/upvote.svg) no-repeat;
   border: none;
 }
-
 .upvote:hover {
   background: url(../icons/upvote-hover.svg) no-repeat;
 }
-
 .downvote{
   background: url(../icons/downvote.svg) no-repeat;
   border: none;
@@ -214,11 +187,9 @@ button:focus {
 .downvote:hover {
   background: url(../icons/downvote-hover.svg) no-repeat;
 }
-
 .complete {
   text-decoration: line-through;
 }
-
 @-ms-viewport{
  width: device-width;
 }

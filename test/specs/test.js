@@ -54,7 +54,17 @@ describe('welcome page', function(){
 
   it('should be able to upvote a todo on the page', function(){
     browser.url('/');
+    browser.refresh();
 
+    var toDoTitles = browser.getText('.new-title-input');
+    var toDoBodys = browser.getText('.new-body-input');
+
+    assert.equal(toDoTitles, 'great title');
+    assert.equal(toDoBodys, 'great body');
+  });
+
+  it('should be able to upvote a todo on the page', function(){
+    browser.url('/');
     browser.click('.upvote');
 
     var importance = browser.getText('.importance');
@@ -74,7 +84,6 @@ describe('welcome page', function(){
 
   it('should be able to downvote a todo on the page', function(){
     browser.url('/');
-
     browser.click('.downvote');
 
     var importance = browser.getText('.importance');
@@ -97,10 +106,7 @@ describe('welcome page', function(){
 
   it('should be able to change the class of a todo after Completed is click', function(){
     browser.url('/');
-
     browser.click('.complete-button');
-
-    // var todo = browser.elements('.complete');
 
     assert.equal(browser.isExisting('.complete'), true);
   });
@@ -114,10 +120,14 @@ describe('welcome page', function(){
   //   toDoTitle.setValue('great title');
   //   toDoBody.setValue('great body');
   //   browser.click('.save-button');
-  //   var allToDos = browser.elements('.list-item').getText();
   //
+  //   var toDosBefore = browser.elements('.list-item').getText().length;
   //   browser.click('.remove-button');
-  //   assert.equal(allToDos.length, 2);
+  //
+  //   var toDosAfter = browser.elements('.list-item').getText().length;
+  //
+  //   assert.equal(toDosAfter, toDosBefore-1);
+  //
   // });
 
 });
