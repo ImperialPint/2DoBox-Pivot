@@ -41,6 +41,17 @@ describe('welcome page', function(){
     assert.equal(toDoBodys, 'great body');
   });
 
+  it('should display the todos on refresh', function(){
+    browser.url('/');
+    browser.refresh();
+
+    var toDoTitles = browser.getText('.new-title-input');
+    var toDoBodys = browser.getText('.new-body-input');
+
+    assert.equal(toDoTitles, 'great title');
+    assert.equal(toDoBodys, 'great body');
+  });
+
   it('should be able to upvote a todo on the page', function(){
     browser.url('/');
 
