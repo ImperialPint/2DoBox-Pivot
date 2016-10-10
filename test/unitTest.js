@@ -1,6 +1,7 @@
 const assert = require('chai').assert;
 const ToDo = require('../lib/todo.js');
 const AllToDos = require('../lib/AllToDos.js');
+const countChar = require('../lib/scripts.js');
 
 describe('ToDo Object Unit Tests', function(){
   it('ToDo should be an object', function(){
@@ -81,5 +82,11 @@ describe('ToDo Object Unit Tests', function(){
     it('should have a property toDoArray set as an empty array', function(){
       assert.deepEqual(AllToDos.toDoArray, []);
     });
+  });
+  describe('countChar', function(){
+    it('should be a function', function(){
+      assert.isFunction(countChar, true);
+    });
+    
   });
 });
