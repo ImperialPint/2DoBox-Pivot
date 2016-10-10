@@ -127,6 +127,20 @@ describe('welcome page', function(){
 
   });
 
-  //WRITE TESTS FOR ALL THE BUTTONS
+  it('should render critical tasks when a user clicks critical', function(){
+    browser.url('/');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    toDoTitle.setValue('great title');
+    toDoBody.setValue('great body');
+    browser.click('.save-button');
+    browser.click('.upvote');
+    browser.click('.upvote');
+    browser.click('.critical-button');
+    assert.equal(browser.getText('.importance'), 'importance: Critical');
+
+  });
 
 });
