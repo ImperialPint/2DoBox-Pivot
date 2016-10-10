@@ -217,6 +217,19 @@ describe('welcome page', function(){
       assert.equal(browser.isVisibleWithinViewport('.list-item')[0], false);
     });
 
+    it('should display todos when the user searches for a todo that is there', function(){
+      browser.url('/');
 
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+
+      browser.setValue('.search','great');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[0], true);
+    });
 
 });
