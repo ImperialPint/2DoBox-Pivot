@@ -100,23 +100,18 @@ describe('welcome page', function(){
     assert.equal(browser.isExisting('.complete'), true);
   });
 
-  // it('should be able to delete a todo from the page', function(){
-  //   browser.url('/');
-  //
-  //   var toDoTitle = browser.element('.title');
-  //   var toDoBody = browser.element('.body');
-  //
-  //   toDoTitle.setValue('great title');
-  //   toDoBody.setValue('great body');
-  //   browser.click('.save-button');
-  //
-  //   var toDosBefore = browser.elements('.list-item').getText().length;
-  //   browser.click('.remove-button');
-  //
-  //   var toDosAfter = browser.elements('.list-item').getText().length;
-  //
-  //   assert.equal(toDosAfter, toDosBefore-1);
-  //
-  // });
+  it('should be able to delete a todo from the page', function(){
+    browser.url('/');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    toDoTitle.setValue('great title');
+    toDoBody.setValue('great body');
+    browser.click('.save-button');
+    browser.click('.remove-button');
+    assert.equal(browser.isExisting('.list-item'), false);
+
+  });
 
 });
