@@ -64,10 +64,12 @@ li {
   text-align: center;
   border-radius: 25px;
 }
+
 .importance-button, .completed-button {
   margin: 10px;
 }
-.button:hover {
+
+.button:hover, .importance-button:hover, .completed-button:hover {
   background-color: $buttongHoverBackground;
   cursor: pointer;
 }
@@ -111,10 +113,7 @@ li {
 .new-body-input {
   color: $bodyTextColor;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0b7d77e0e2464797e9390660558cbefbde6d8dc1
 .list-item {
   display: flex;
   flex-direction: column;
@@ -151,10 +150,7 @@ li {
   height: 25px;
   padding: 0 14px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0b7d77e0e2464797e9390660558cbefbde6d8dc1
 .show-more{
   display: flex;
   width: 125px;
@@ -186,6 +182,9 @@ button:focus {
 }
 .downvote:hover {
   background: url(../icons/downvote-hover.svg) no-repeat;
+}
+.complete-button:hover{
+  background-color: $buttongHoverBackground;
 }
 .complete {
   text-decoration: line-through;
