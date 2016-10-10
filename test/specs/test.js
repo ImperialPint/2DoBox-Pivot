@@ -261,4 +261,19 @@ describe('welcome page', function(){
 
       assert.equal(browser.isVisibleWithinViewport('.complete')[0], true);
     });
+
+    it('should not display completed todos at the top of the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.complete-button');
+      browser.click('.hide-complete-button');
+
+      assert.equal(browser.isVisibleWithinViewport('.complete')[0], undefined);
+    });
 });
