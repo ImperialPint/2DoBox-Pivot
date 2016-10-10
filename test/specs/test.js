@@ -13,6 +13,17 @@ describe('welcome page', function(){
     assert.equal(toDoBody.getValue(), 'great body');
   });
 
+  it('should clear the input fields on save', function(){
+    browser.url('/');
+    browser.click('.save-button');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    assert.equal(toDoTitle.getValue(), '');
+    assert.equal(toDoBody.getValue(), '');
+  });
+
   it('should be able to add todos to the page', function(){
     browser.url('/');
 
