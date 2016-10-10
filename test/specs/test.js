@@ -409,4 +409,34 @@ describe('welcome page', function(){
       assert.equal(title, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq');
     });
 
+    it('should count the number of characters in the title input field', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      toDoBody.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      browser.click('.save-button');
+
+      var charCount = browser.element('.charNumTitle').getText();
+      assert.equal(charCount, 120);
+
+    });
+
+    it('should count the number of characters in the body input field', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      toDoBody.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      browser.click('.save-button');
+
+      var charCount = browser.element('.charNumBody').getText();
+      assert.equal(charCount, 120);
+
+    });
+
 });
