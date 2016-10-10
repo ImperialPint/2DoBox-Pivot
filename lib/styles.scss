@@ -74,6 +74,7 @@ li {
   height: 30px;
   font-size: 18px;
   text-align: center;
+  border-radius: 25px;
 }
 
 .importance-button, .completed-button {
@@ -119,7 +120,6 @@ li {
 .search {
   font-size: 20px;
   border: 2px solid $inputBorder;
-  // margin-bottom: 25px;
   padding-left: 8px;
   width: 60vw;
 }
@@ -132,8 +132,6 @@ li {
 .new-body-input {
   color: $bodyTextColor;
 }
-
-
 
 .list-item {
   display: flex;
@@ -177,6 +175,13 @@ li {
   width: 25px;
   height: 25px;
   padding: 0 14px;
+}
+
+.show-more{
+  display: flex;
+  width: 125px;
+  margin: auto;
+  justify-content: center;
 }
 
 button:focus {
