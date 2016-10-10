@@ -114,4 +114,19 @@ describe('welcome page', function(){
 
   });
 
+  it('should display an error message when the user attempts to save a blank todo', function(){
+    browser.url('/');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    toDoTitle.setValue('');
+    toDoBody.setValue('');
+    browser.click('.save-button');
+    assert.equal(browser.getText('.message-to-user'), 'An input field is empty. Please fill in both fields.');
+
+  });
+
+  //WRITE TESTS FOR ALL THE BUTTONS
+
 });
