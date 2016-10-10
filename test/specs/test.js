@@ -143,7 +143,7 @@ describe('welcome page', function(){
 
   });
 
-  it('should render important tasks when a user clicks important', function(){
+  it('should render high tasks when a user clicks high', function(){
     browser.url('/');
 
     var toDoTitle = browser.element('.title');
@@ -157,6 +157,50 @@ describe('welcome page', function(){
     assert.equal(browser.getText('.importance'), 'importance: High');
 
   });
+
+
+    it('should render normal tasks when a user clicks normal', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.normal-button');
+      assert.equal(browser.getText('.importance'), 'importance: Normal');
+
+    });
+    it('should render low tasks when a user clicks low', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.downvote');
+      browser.click('.low-button');
+      assert.equal(browser.getText('.importance'), 'importance: Low');
+
+    });
+
+    it('should render none tasks when a user clicks none', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.downvote');
+      browser.click('.none-button');
+      assert.equal(browser.getText('.importance'), 'importance: None');
+
+    });
 
 
 
