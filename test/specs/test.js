@@ -143,4 +143,21 @@ describe('welcome page', function(){
 
   });
 
+  it('should render important tasks when a user clicks important', function(){
+    browser.url('/');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    toDoTitle.setValue('great title');
+    toDoBody.setValue('great body');
+    browser.click('.save-button');
+    browser.click('.upvote');
+    browser.click('.high-button');
+    assert.equal(browser.getText('.importance'), 'importance: High');
+
+  });
+
+
+
 });
