@@ -417,7 +417,7 @@
 	$('.list-container').on('click', '.complete-button', function(){
 	  var id = $(this).closest('.list-item').attr('id');
 	  AllToDos.find(id).toggleComplete();
-	  $(this).parent().parent().toggleClass('complete');
+	  $(this).closest('.list-item').toggleClass('complete');
 	});
 
 	$('.list-container').on('keyup', '.new-title-input', function () {
@@ -11114,6 +11114,16 @@
 	    assert.equal(todo.completeness, 'incomplete');
 	  });
 
+	  it('should have a remove function', function(){
+	    var todo = new ToDo();
+	    assert.isFunction(todo.remove, true);
+	  });
+
+	  it('should have a remove function', function(){
+	    var todo = new ToDo();
+	    assert.isFunction(todo.remove, true);
+	  });
+
 	  describe('AllToDos object unit tests', function(){
 	    it('should be an object', function(){
 	      assert.isObject(AllToDos, true);
@@ -11124,12 +11134,57 @@
 	    it('should have a property toDoArray set as an empty array', function(){
 	      assert.deepEqual(AllToDos.toDoArray, []);
 	    });
+	    it('should have a addStoreToArray function', function(){
+	      assert.isFunction(AllToDos.addStoreToArray, true);
+	    });
+	    it('should have a changeTitle function', function(){
+	      assert.isFunction(AllToDos.changeTitle, true);
+	    });
+	    it('should have a changeBody function', function(){
+	      assert.isFunction(AllToDos.changeBody, true);
+	    });
+	    it('should have a store function', function(){
+	      assert.isFunction(AllToDos.store, true);
+	    });
+	    it('should have a render function', function(){
+	      assert.isFunction(AllToDos.render, true);
+	    });
+	    it('should have a renderImportance function', function(){
+	      assert.isFunction(AllToDos.renderImportance, true);
+	    });
+	    it('should have a renderStorage function', function(){
+	      assert.isFunction(AllToDos.renderStorage, true);
+	    });
+	    it('should have a renderFirstTen function', function(){
+	      assert.isFunction(AllToDos.renderFirstTen, true);
+	    });
+	    it('should have a renderComplete function', function(){
+	      assert.isFunction(AllToDos.renderComplete, true);
+	    });
+	    it('should have a renderMore function', function(){
+	      assert.isFunction(AllToDos.renderMore, true);
+	    });
+	    it('should have a retrieve function', function(){
+	      assert.isFunction(AllToDos.retrieve, true);
+	    });
+	    it('should have a hideComplete function', function(){
+	      assert.isFunction(AllToDos.hideComplete, true);
+	    });
+	    it('should have a showComplete function', function(){
+	      assert.isFunction(AllToDos.showComplete, true);
+	    });
+	    it('should have a find function', function(){
+	      assert.isFunction(AllToDos.find, true);
+	    });
+	    it('should have a clearListContainer function', function(){
+	      assert.isFunction(AllToDos.clearListContainer, true);
+	    });
+
 	  });
 	  describe('countChar', function(){
 	    it('should be a function', function(){
 	      assert.isFunction(countChar, true);
 	    });
-	    
 	  });
 	});
 
