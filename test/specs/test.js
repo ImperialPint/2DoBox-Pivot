@@ -307,7 +307,7 @@ describe('welcome page', function(){
       assert.equal(browser.isVisibleWithinViewport('.list-item')[10], undefined);
     });
 
-    it('should not display any more than 10 todos on the page when the user selects show complete', function(){
+    it('should display more than 10 todos on the page when the user selects show complete', function(){
       browser.url('/');
 
       var toDoTitle = browser.element('.title');
@@ -379,6 +379,20 @@ describe('welcome page', function(){
       browser.click('.show-more');
 
       assert.equal(browser.isVisibleWithinViewport('.list-item')[10], true);
+    });
+
+    it('should not be able to put anymore than 120 characters into the title or body', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      browser.click('.save-button');
+
+      var body = browser.element('.new-body-input').getText();
+      assert.equal(body, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq');
     });
 
 });
