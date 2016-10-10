@@ -75,5 +75,11 @@ describe('ToDo Object Unit Tests', function(){
     it('should be an object', function(){
       assert.isObject(AllToDos, true);
     });
+    it('should have a property maxToDos with a default value of 10', function(){
+      assert.equal(AllToDos.maxToDos, 10);
+    });
+    it('should have a property toDoArray set as an empty array', function(){
+      assert.deepEqual(AllToDos.toDoArray, []);
+    });
   });
 });
