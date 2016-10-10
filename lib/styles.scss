@@ -4,16 +4,17 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-$headerBackground: #e5f3f2;
-$h1Primary:#00a79d;
-$h1Secondary:#6d6e71;
-$buttonBackground: #00a79d;
+$headerBackground: #l2E60AD;
+$h1Primary:#BD0D18;
+$h1Secondary:#000000;
+$buttonBackground: #BD0D18;
 $buttonText: #ffffff;
 $inputBorder: lightgrey;
-$buttongHoverBackground: #045e55;
+$buttonHoverBackground: #000000;
 $toDoBottomBorder: #D1D3D4;
-$toDoTextColor: #6d6e71;
-$bodyTextColor: #939598;
+$toDoTextColor: #151414;
+$bodyTextColor: #292525;
+
 body{
   font-family: 'Open Sans', sans-serif;
 }
@@ -26,9 +27,6 @@ h1 {
 h1 span {
   color: $h1Secondary;
 }
-li {
-  list-style-type: none;
-}
 .header-container {
   background-color: $headerBackground;
   display: flex;
@@ -40,6 +38,7 @@ li {
   padding-top: 20px;
   width: 100%;
 }
+
 .input-container {
   flex-direction: column;
   flex-wrap: wrap;
@@ -62,13 +61,21 @@ li {
   height: 30px;
   font-size: 18px;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 5px;
+  margin: 5px 10px;
 }
-.importance-button, .completed-button {
-  margin: 10px;
+.complete-button{
+  background-color: $buttonBackground;
+  color: $buttonText;
+  border: none;
+  height: 15px;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 8px 0;
 }
-.button:hover {
-  background-color: $buttongHoverBackground;
+.button:hover, .importance-button:hover, .completed-button:hover, .complete-button:hover {
+  background-color: $buttonHoverBackground;
   cursor: pointer;
 }
 .importance-container{
@@ -121,10 +128,6 @@ li {
 .title-style, .body-style, .importanceUp-style {
   display: flex;
 }
-// .importanceUp-style {
-//   align-items: center;
-//   padding-bottom: 15px;
-// }
 .title-style {
   font-size: 1.3em;
   margin-bottom: 15px;
