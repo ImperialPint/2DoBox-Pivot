@@ -432,7 +432,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Open Sans', sans-serif; }\n\nh1, h3 {\n  font-family: 'Roboto Slab', serif; }\n\nh1 {\n  color: #00a79d; }\n\nh1 span {\n  color: #6d6e71; }\n\nli {\n  list-style-type: none; }\n\n.header-container {\n  background-color: #e5f3f2;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  flex-wrap: wrap;\n  font-size: 40px;\n  padding-top: 20px;\n  width: 100%; }\n\n.input-container {\n  flex-direction: column;\n  flex-wrap: wrap;\n  margin-top: 20px;\n  width: 60vw; }\n\n.title, .body, .button {\n  width: 100%;\n  margin-bottom: 10px;\n  padding-left: 8px; }\n\n.title, .body {\n  font-size: 20px;\n  border: 2px solid lightgrey; }\n\n.button {\n  background-color: #00a79d;\n  color: #ffffff;\n  border: none;\n  height: 30px;\n  font-size: 18px;\n  /*margin-bottom: 30px;*/\n  text-align: center; }\n\n.show-complete-button {\n  margin-bottom: 30px; }\n\n.button:hover {\n  background-color: #045e55;\n  cursor: pointer; }\n\n.search-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 20px;\n  width: 100%; }\n\n.search {\n  font-size: 20px;\n  border: 2px solid lightgrey;\n  margin-bottom: 25px;\n  padding-left: 8px;\n  width: 60vw; }\n\n.message-to-user {\n  font-size: 15px;\n  text-align: center; }\n\n.new-body-input {\n  color: #939598; }\n\n.list-container {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  color: #6d6e71; }\n\n.list-item {\n  display: flex;\n  flex-direction: column;\n  width: 60vw;\n  margin-bottom: 15px;\n  border-bottom: 1px solid #D1D3D4; }\n\n.title-style, .body-style, .importanceUp-style {\n  display: flex; }\n\n.importanceUp-style {\n  align-items: center;\n  padding-bottom: 15px; }\n\n.title-style {\n  font-size: 1.3em;\n  margin-bottom: 15px;\n  font-family: 'Roboto Slab', serif; }\n\n.body-style {\n  margin-bottom: 15px;\n  line-height: 1.2; }\n\n.importanceUp {\n  font-size: .9em;\n  padding-left: 8px;\n  font-family: 'Roboto Slab', serif; }\n\n.importanceUp-value {\n  padding-left: 3px; }\n\n.btn {\n  width: 25px;\n  height: 25px;\n  padding: 0 14px; }\n\nbutton:focus {\n  outline: none; }\n\n.remove-button {\n  background: url(" + __webpack_require__(7) + ") no-repeat;\n  border: none;\n  margin-left: auto; }\n\n.remove-button:hover {\n  background: url(" + __webpack_require__(8) + ") no-repeat; }\n\n.upvote {\n  background: url(" + __webpack_require__(9) + ") no-repeat;\n  border: none; }\n\n.upvote:hover {\n  background: url(" + __webpack_require__(10) + ") no-repeat; }\n\n.downvote {\n  background: url(" + __webpack_require__(11) + ") no-repeat;\n  border: none; }\n\n.downvote:hover {\n  background: url(" + __webpack_require__(12) + ") no-repeat; }\n\n.complete {\n  text-decoration: line-through; }\n\n@-ms-viewport {\n  width: device-width; }\n", ""]);
+	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  font-family: 'Open Sans', sans-serif; }\n\nh1, h3 {\n  font-family: 'Roboto Slab', serif; }\n\nh1 {\n  color: #00a79d; }\n\nh1 span {\n  color: #6d6e71; }\n\nli {\n  list-style-type: none; }\n\n.header-container {\n  background-color: #e5f3f2;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  flex-wrap: wrap;\n  font-size: 40px;\n  padding-top: 20px;\n  width: 100%; }\n\n.input-container {\n  flex-direction: column;\n  flex-wrap: wrap;\n  margin-top: 20px;\n  width: 60vw; }\n\n.title, .body, .button {\n  width: 100%;\n  margin-bottom: 10px;\n  padding-left: 8px; }\n\n.title, .body {\n  font-size: 20px;\n  border: 2px solid lightgrey; }\n\n.button, .importance-button, .completed-button {\n  background-color: #00a79d;\n  color: #ffffff;\n  border: none;\n  height: 30px;\n  font-size: 18px;\n  text-align: center;\n  border-radius: 25px; }\n\n.importance-button, .completed-button {\n  margin: 10px; }\n\n.button:hover {\n  background-color: #045e55;\n  cursor: pointer; }\n\n.importance-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 15px 0;\n  width: 100%; }\n\n.search-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 20px 0;\n  width: 100%; }\n\n.list-container {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  color: #6d6e71; }\n\n.completed-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-bottom: 20px;\n  width: 100%; }\n\n.search {\n  font-size: 20px;\n  border: 2px solid lightgrey;\n  padding-left: 8px;\n  width: 60vw; }\n\n.message-to-user {\n  font-size: 15px;\n  text-align: center; }\n\n.new-body-input {\n  color: #939598; }\n\n.list-item {\n  display: flex;\n  flex-direction: column;\n  width: 60vw;\n  margin-bottom: 15px;\n  border-bottom: 1px solid #D1D3D4; }\n\n.title-style, .body-style, .importanceUp-style {\n  display: flex; }\n\n.title-style {\n  font-size: 1.3em;\n  margin-bottom: 15px;\n  font-family: 'Roboto Slab', serif; }\n\n.body-style {\n  margin-bottom: 15px;\n  line-height: 1.2; }\n\n.importanceUp {\n  font-size: .9em;\n  padding-left: 8px;\n  font-family: 'Roboto Slab', serif; }\n\n.importanceUp-value {\n  padding-left: 3px; }\n\n.btn {\n  width: 25px;\n  height: 25px;\n  padding: 0 14px; }\n\n.show-more {\n  display: flex;\n  width: 125px;\n  margin: auto;\n  justify-content: center; }\n\nbutton:focus {\n  outline: none; }\n\n.remove-button {\n  background: url(" + __webpack_require__(7) + ") no-repeat;\n  border: none;\n  margin-left: auto; }\n\n.remove-button:hover {\n  background: url(" + __webpack_require__(8) + ") no-repeat; }\n\n.upvote {\n  background: url(" + __webpack_require__(9) + ") no-repeat;\n  border: none; }\n\n.upvote:hover {\n  background: url(" + __webpack_require__(10) + ") no-repeat; }\n\n.downvote {\n  background: url(" + __webpack_require__(11) + ") no-repeat;\n  border: none; }\n\n.downvote:hover {\n  background: url(" + __webpack_require__(12) + ") no-repeat; }\n\n.complete {\n  text-decoration: line-through; }\n\n@-ms-viewport {\n  width: device-width; }\n", ""]);
 
 	// exports
 
@@ -477,11 +477,10 @@
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	const $ = __webpack_require__(14);
+	const AllToDos = __webpack_require__(14)
+	const $ = __webpack_require__(15);
 
 	$(document).ready(function(){
-	  // TODO: verify:step one is populate the AllToDos.toDoArray from localStorage
-	  // TODO: verify: step two: render everything out of that populated array
 	  AllToDos.retrieve();
 	  AllToDos.renderStorage();
 	  AllToDos.hideComplete();
@@ -495,7 +494,6 @@
 	   displayErrorMessage('inputBlanks');
 	 } else {
 	 AllToDos.addStoreToArray(toDo);
-	 // TODO: Do you need to call retrieve again on save?
 	 AllToDos.retrieve();
 	 AllToDos.clearListContainer();
 	 AllToDos.renderStorage();
@@ -547,41 +545,41 @@
 	});
 
 	$('.list-container').on('click', '.downvote', function(){
-	  var id = $(this).parent().parent().attr('id');
+	  var id = $(this).closest('.list-item').attr('id');
 	  AllToDos.find(id).importanceDown();
 	  var importance = AllToDos.find(id).importance;
 	  $(this).siblings('.importance').text('importance: ' + importance);
 	});
 
 	$('.list-container').on('click', '.upvote', function(){
-	  var id = $(this).parent().parent().attr('id');
+	  var id = $(this).closest('.list-item').attr('id');
 	  AllToDos.find(id).importanceUp();
 	  var importance = AllToDos.find(id).importance;
 	  $(this).siblings('.importance').text('importance: ' + importance);
 	});
 
 	$('.list-container').on('click', '.remove-button', function(){
-	  var id = $(this).parent().parent().attr('id');
+	  var id = $(this).closest('.list-item').attr('id');
 	  AllToDos.find(id).remove(id);
 	  AllToDos.clearListContainer();
 	  AllToDos.renderStorage();
 	});
 
 	$('.list-container').on('click', '.complete-button', function(){
-	  var id = $(this).parent().parent().attr('id');
+	  var id = $(this).closest('.list-item').attr('id');
 	  AllToDos.find(id).toggleComplete();
 	  $(this).parent().parent().toggleClass('complete');
 	});
 
 	$('.list-container').on('keyup', '.new-title-input', function () {
-	  var id = $(this).parent().parent().attr('id');
+	  var id = $(this).closest('.list-item').attr('id');
 	  var newTitle = $(this).text();
 
 	  AllToDos.changeTitle(id, newTitle);
 	});
 
 	$('.list-container').on('keyup', '.new-body-input', function () {
-	  var id = $(this).parent().parent().attr('id');
+	  var id = $(this).closest('.list-item').attr('id');
 	  var newBody = $(this).text();
 	  AllToDos.changeBody(id, newBody);
 	});
@@ -596,12 +594,26 @@
 	  }).hide();
 	});
 
-	function ToDo(title, body, id, importance, completeness) {
-	  this.title = title;
-	  this.body = body;
-	  this.id = id || Date.now();
-	  this.importance = importance || 'Normal';
-	  this.completeness = completeness || 'incomplete';
+	$('.title').on('keyup', function(){
+	  var input = $('.title');
+	  var output = $('#charNumTitle');
+	  countChar(input, output);
+	});
+
+	$('.body').on('keyup', function(){
+	  var input = $('.body');
+	  var output = $('#charNumBody');
+	  countChar(input, output);
+	});
+
+	function countChar(input, output){
+	     var length = input.val().length;
+	     if (length >= 121) {
+	              $('.title').value = $('.title').value.substring(0, 121);
+	     } else {
+	              $('.title').text(121 - length);
+	     }
+	     output.text(length);
 	}
 
 	function displayErrorMessage(errorType) {
@@ -619,57 +631,28 @@
 	 $('.body').val('');
 	}
 
-	ToDo.prototype.importanceUp = function () {
-	  // var imports = importance;
-	  var importance = this.importance;
-	  var increaseImportance = {
-	    "None" : "Low",
-	    "Low" : "Normal",
-	    "Normal" : "High",
-	    "High" : "Critical",
-	    "Critical" : "Critical"
-	  };
-	  this.importance = increaseImportance[importance];
-	  return AllToDos.store();
-	};
+	function ToDo(title, body, id, importance, completeness) {
+	  this.title = title;
+	  this.body = body;
+	  this.id = id || Date.now();
+	  this.importance = importance || 'Normal';
+	  this.completeness = completeness || 'incomplete';
+	}
 
-	ToDo.prototype.importanceDown = function () {
-	  var importance = this.importance;
-	  var decreaseImportance = {
-	    "Critical":"High",
-	    "High" : "Normal",
-	    "Normal" : "Low",
-	    "Low" : "None",
-	    "None" : "None"
-	  };
-	  this.importance = decreaseImportance[importance];
-	  return AllToDos.store();
-	};
 
-	ToDo.prototype.remove = function(id) {
-	  id = parseInt(id);
-	  AllToDos.toDoArray = AllToDos.toDoArray.filter(function (r) {
-	    return r.id !== id;
-	  });
-	  AllToDos.store();
-	};
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
 
-	ToDo.prototype.toggleComplete = function(){
-	  var completeness = this.completeness;
-	  var toggleCompleteness = {
-	    "complete" : "incomplete",
-	    "incomplete" : "complete"
-	  };
-	  this.completeness = toggleCompleteness[completeness];
-	  return AllToDos.store();
-	};
+	__webpack_require__(13);
+	const $ = __webpack_require__(15);
+
 
 	var AllToDos = {
 	  maxToDos: 10,
 	  toDoArray: [],
 
 	  addStoreToArray: function(toDo){
-	    //TODO: This will always be truthy (I think) if it returns an [] - check what you return and make sure you're not false flagging yourself
 	    this.toDoArray.unshift(toDo);
 	    this.store();
 	  },
@@ -779,9 +762,65 @@
 	  }
 	};
 
+	function ToDo(title, body, id, importance, completeness) {
+	  this.title = title;
+	  this.body = body;
+	  this.id = id || Date.now();
+	  this.importance = importance || 'Normal';
+	  this.completeness = completeness || 'incomplete';
+	}
+
+	ToDo.prototype.importanceUp = function () {
+	  // var imports = importance;
+	  var importance = this.importance;
+	  var increaseImportance = {
+	    "None" : "Low",
+	    "Low" : "Normal",
+	    "Normal" : "High",
+	    "High" : "Critical",
+	    "Critical" : "Critical"
+	  };
+	  this.importance = increaseImportance[importance];
+	  return AllToDos.store();
+	};
+
+	ToDo.prototype.importanceDown = function () {
+	  var importance = this.importance;
+	  var decreaseImportance = {
+	    "Critical":"High",
+	    "High" : "Normal",
+	    "Normal" : "Low",
+	    "Low" : "None",
+	    "None" : "None"
+	  };
+	  this.importance = decreaseImportance[importance];
+	  return AllToDos.store();
+	};
+
+	ToDo.prototype.remove = function(id) {
+	  id = parseInt(id);
+	  AllToDos.toDoArray = AllToDos.toDoArray.filter(function (r) {
+	    return r.id !== id;
+	  });
+	  AllToDos.store();
+	};
+
+	ToDo.prototype.toggleComplete = function(){
+	  var completeness = this.completeness;
+	  var toggleCompleteness = {
+	    "complete" : "incomplete",
+	    "incomplete" : "complete"
+	  };
+	  this.completeness = toggleCompleteness[completeness];
+	  return AllToDos.store();
+	};
+
+
+	module.exports = AllToDos;
+
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
