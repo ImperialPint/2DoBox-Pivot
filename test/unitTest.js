@@ -32,8 +32,34 @@ describe('ToDo Object Unit Tests', function(){
     assert.equal(todo.importance, 'Critical');
   });
 
+  it('todo.importanceDown should decrease importance from Normal to Low', function(){
+    var todo = new ToDo();
+    todo.importanceDown();
+    assert.equal(todo.importance, 'Low');
+  });
+
+  it('todo.importanceDown should remain at None when todo.importance is None', function(){
+    var todo = new ToDo();
+    todo.importance = 'None';
+    todo.importanceDown();
+    assert.equal(todo.importance, 'None');
+  });
+
+  it('todo.importanceDown should decrease importance from Low to None', function(){
+    var todo = new ToDo();
+    todo.importance = 'Low';
+    todo.importanceDown();
+    assert.equal(todo.importance, 'None');
+  });
+
   it('should have a default completeness of incomplete', function(){
     var todo = new ToDo();
     assert.equal(todo.completeness, 'incomplete');
+  });
+
+  it('should have a completeness of complete when todo.toggleComplete is called on default', function(){
+    var todo = new ToDo();
+    todo.toggleComplete();
+    assert.equal(todo.completeness, 'complete');
   });
 });
