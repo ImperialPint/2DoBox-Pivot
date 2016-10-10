@@ -114,4 +114,299 @@ describe('welcome page', function(){
 
   });
 
+  it('should display an error message when the user attempts to save a blank todo', function(){
+    browser.url('/');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    toDoTitle.setValue('');
+    toDoBody.setValue('');
+    browser.click('.save-button');
+    assert.equal(browser.getText('.message-to-user'), 'An input field is empty. Please fill in both fields.');
+
+  });
+
+  it('should render critical tasks when a user clicks critical', function(){
+    browser.url('/');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    toDoTitle.setValue('great title');
+    toDoBody.setValue('great body');
+    browser.click('.save-button');
+    browser.click('.upvote');
+    browser.click('.upvote');
+    browser.click('.critical-button');
+    assert.equal(browser.getText('.importance'), 'importance: Critical');
+
+  });
+
+  it('should render high tasks when a user clicks high', function(){
+    browser.url('/');
+
+    var toDoTitle = browser.element('.title');
+    var toDoBody = browser.element('.body');
+
+    toDoTitle.setValue('great title');
+    toDoBody.setValue('great body');
+    browser.click('.save-button');
+    browser.click('.upvote');
+    browser.click('.high-button');
+    assert.equal(browser.getText('.importance'), 'importance: High');
+
+  });
+
+
+    it('should render normal tasks when a user clicks normal', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.normal-button');
+      assert.equal(browser.getText('.importance'), 'importance: Normal');
+
+    });
+    it('should render low tasks when a user clicks low', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.downvote');
+      browser.click('.low-button');
+      assert.equal(browser.getText('.importance'), 'importance: Low');
+
+    });
+
+    it('should render none tasks when a user clicks none', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.downvote');
+      browser.click('.none-button');
+      assert.equal(browser.getText('.importance'), 'importance: None');
+
+    });
+
+    it('should not display any todos when the user searches for a todo that is not there', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+
+      browser.setValue('.search','asdfasdfasdf');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[0], false);
+    });
+
+    it('should display todos when the user searches for a todo that is there', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+
+      browser.setValue('.search','great');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[0], true);
+    });
+
+    it('should display todos when the user searches for a todo that is there', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+
+      browser.setValue('.search','great');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[0], true);
+    });
+
+    it('should display completed todos at the top of the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.complete-button');
+      browser.click('.show-complete-button');
+
+      assert.equal(browser.isVisibleWithinViewport('.complete')[0], true);
+    });
+
+    it('should not display completed todos at the top of the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.complete-button');
+      browser.click('.hide-complete-button');
+
+      assert.equal(browser.isVisibleWithinViewport('.complete')[0], undefined);
+    });
+
+    it('should not display any more than 10 todos on the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[10], undefined);
+    });
+
+    it('should display more than 10 todos on the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+
+      browser.click('.show-more');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[10], true);
+    });
+
+    it('should not be able to put anymore than 120 characters into the body', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      browser.click('.save-button');
+
+      var body = browser.element('.new-body-input').getText();
+      assert.equal(body, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq');
+    });
+
+    it('should not be able to put anymore than 120 characters into the title', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      toDoBody.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      browser.click('.save-button');
+
+      var title = browser.element('.new-title-input').getText();
+      assert.equal(title, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq');
+    });
+
 });
