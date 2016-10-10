@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
 const ToDo = require('../lib/todo.js');
+const AllToDos = require('../lib/AllToDos.js');
 
 describe('ToDo Object Unit Tests', function(){
   it('ToDo should be an object', function(){
@@ -61,5 +62,18 @@ describe('ToDo Object Unit Tests', function(){
     var todo = new ToDo();
     todo.toggleComplete();
     assert.equal(todo.completeness, 'complete');
+  });
+
+  it('should have a completeness of incomplete when todo.toggleComplete is called when todo.completeness is complete', function(){
+    var todo = new ToDo();
+    todo.completeness = 'complete';
+    todo.toggleComplete();
+    assert.equal(todo.completeness, 'incomplete');
+  });
+
+  describe('AllToDos object unit tests', function(){
+    it('should be an object', function(){
+      assert.isObject(AllToDos, true);
+    });
   });
 });
