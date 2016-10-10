@@ -143,8 +143,5 @@ describe('ToDo Object Unit Tests', function(){
     it('should be a function', function(){
       assert.isFunction(countChar, true);
     });
-    it.skip('should take two parameters', function(){
-
-    });
   });
 });
