@@ -276,4 +276,109 @@ describe('welcome page', function(){
 
       assert.equal(browser.isVisibleWithinViewport('.complete')[0], undefined);
     });
+
+    it('should not display any more than 10 todos on the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+      browser.click('.save-button');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[10], undefined);
+    });
+
+    it('should not display any more than 10 todos on the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      toDoTitle = browser.element('.title');
+      toDoBody = browser.element('.body');
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+
+      browser.click('.show-more');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[10], true);
+    });
+
 });
