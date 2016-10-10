@@ -2,31 +2,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./lib/reset.css">
-    <link rel="stylesheet" href="./lib/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <title> ToDoBox | Be Productive</title>
   </head>
   <body>
-
     <section class="header-container">
       <h1>2Do<span>Box</span></h1>
       <section class="input-container">
-        <input type="text" class="title" placeholder="Title">
-        <input type="text" class="body" placeholder="Task">
-        <button type="button" class="save-button">save</button>
+        <input type="text" class="title" placeholder="Title" maxlength="120">
+        <div id="charNumTitle charCount"></div>
+        <input type="text" class="body" placeholder="Task" maxlength="120">
+        <div id="charNumBody charCount"></div>
+        <button type="button" class="save-button button">save</button>
         <p class="message-to-user"></p>
       </section>
     </section>
-
     <section class="search-container">
       <input type="text" class="search" placeholder="Search">
     </section>
-
+    <section class="importance-container">
+      <button type="button" class="critical-button importance-button">Critical</button>
+      <button type="button" class="high-button importance-button">High</button>
+      <button type="button" class="normal-button importance-button">Normal</button>
+      <button type="button" class="low-button importance-button">Low</button>
+      <button type="button" class="none-button importance-button">None</button>
+    </section>
+    <section class="completed-container">
+      <button type="button" class="show-complete-button completed-button"> show completed todos</button>
+      <button type="button" class="hide-complete-button completed-button"> hide completed todos</button>
+    </section>
     <section class="list-container"></section>
-
+    <button type="button" class="button show-more">show more</button>
     <script type="text/javascript" src="main.bundle.js">
     </script>
   </body>
