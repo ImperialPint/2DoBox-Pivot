@@ -232,4 +232,33 @@ describe('welcome page', function(){
       assert.equal(browser.isVisibleWithinViewport('.list-item')[0], true);
     });
 
+    it('should display todos when the user searches for a todo that is there', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+
+      browser.setValue('.search','great');
+
+      assert.equal(browser.isVisibleWithinViewport('.list-item')[0], true);
+    });
+
+    it('should display completed todos at the top of the page when the user selects show complete', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('great title');
+      toDoBody.setValue('great body');
+      browser.click('.save-button');
+      browser.click('.complete-button');
+      browser.click('.show-complete-button');
+
+      assert.equal(browser.isVisibleWithinViewport('.complete')[0], true);
+    });
 });
