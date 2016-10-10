@@ -381,7 +381,7 @@ describe('welcome page', function(){
       assert.equal(browser.isVisibleWithinViewport('.list-item')[10], true);
     });
 
-    it('should not be able to put anymore than 120 characters into the title or body', function(){
+    it('should not be able to put anymore than 120 characters into the body', function(){
       browser.url('/');
 
       var toDoTitle = browser.element('.title');
@@ -393,6 +393,20 @@ describe('welcome page', function(){
 
       var body = browser.element('.new-body-input').getText();
       assert.equal(body, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq');
+    });
+
+    it('should not be able to put anymore than 120 characters into the title', function(){
+      browser.url('/');
+
+      var toDoTitle = browser.element('.title');
+      var toDoBody = browser.element('.body');
+
+      toDoTitle.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      toDoBody.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqasdfasdfasd');
+      browser.click('.save-button');
+
+      var title = browser.element('.new-title-input').getText();
+      assert.equal(title, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq');
     });
 
 });
